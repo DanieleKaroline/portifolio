@@ -1,0 +1,53 @@
+// Cores principais
+$color-bg: #0e0125;
+$color-green: #f7f7f7;
+$color-text: #fff;
+$color-detail: #222;
+
+// Gradientes sofisticados
+$gradient-primary: linear-gradient(135deg, #0e0125 0%, #1a0b3a 50%, #2d1b69 100%);
+$gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
+$gradient-accent: linear-gradient(45deg, #f7f7f7 0%, #e0e0e0 100%);
+$gradient-card: linear-gradient(135deg, rgba(247, 247, 247, 0.05) 0%, rgba(139, 92, 246, 0.1) 100%);
+
+// Tipografia
+$font-primary: "Mozilla Headline", sans-serif;
+$font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// Sistema de espaçamento
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
+
+// Tamanhos de fonte
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+
+// Sombras
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
+$shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.25);
+$shadow-neon: 0 0 20px rgba(139, 92, 246, 0.3);
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

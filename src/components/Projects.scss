@@ -1,0 +1,339 @@
+@import '../styles/variables';
+
+.projects-container {
+  padding: $spacing-xxl $spacing-xl;
+  background: $gradient-primary;
+  min-height: 80vh;
+}
+
+.section-title {
+  text-align: center;
+  color: $color-green;
+  font-family: $font-primary;
+  font-size: $font-size-4xl;
+  font-weight: 700;
+  margin-bottom: $spacing-xl;
+  letter-spacing: -0.02em;
+  background: $gradient-accent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: $gradient-secondary;
+    border-radius: $radius-sm;
+  }
+}
+
+.projects-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.carousel-btn {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: $color-green;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: $shadow-md;
+  
+  &:hover {
+    background: rgba(139, 92, 246, 0.3);
+    transform: scale(1.1);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:active {
+    transform: scale(1.05);
+  }
+}
+
+.carousel-btn i {
+  font-size: $font-size-lg;
+}
+
+.project-card {
+  flex: 1;
+  background: $gradient-card;
+  border: 1px solid rgba(247, 247, 247, 0.1);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: $shadow-lg;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image img,
+.project-image iframe,
+.project-image .github-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-image iframe {
+  border: none;
+  border-radius: 0;
+}
+
+.project-card:hover .project-image img,
+.project-card:hover .project-image iframe,
+.project-card:hover .project-image .github-preview {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: $spacing-xl;
+}
+
+.project-info h3 {
+  color: $color-green;
+  font-family: $font-primary;
+  font-size: $font-size-2xl;
+  font-weight: 600;
+  margin: 0 0 $spacing-md 0;
+  letter-spacing: -0.01em;
+}
+
+.project-info .description {
+  color: $color-text;
+  font-size: $font-size-base;
+  line-height: 1.7;
+  margin-bottom: $spacing-lg;
+  opacity: 0.9;
+  font-family: $font-secondary;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+}
+
+.tech-tag {
+  background: rgba(139, 92, 246, 0.2);
+  color: $color-green;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 20px;
+  font-size: $font-size-xs;
+  font-weight: 500;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  font-family: $font-secondary;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-green;
+  text-decoration: none;
+  font-weight: 600;
+  padding: $spacing-sm $spacing-lg;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: $radius-md;
+  transition: all 0.3s ease;
+  background: rgba(139, 92, 246, 0.1);
+  font-family: $font-secondary;
+  
+  &:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(247, 247, 247, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &.active {
+    background: $color-green;
+    transform: scale(1.2);
+  }
+  
+  &:hover {
+    background: rgba(139, 92, 246, 0.5);
+  }
+}
+
+.github-preview {
+  width: 100%;
+  height: 100%;
+  background: #0d1117;
+  color: #f0f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.github-header {
+  background: #161b22;
+  padding: $spacing-md;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.github-header i {
+  color: #f0f6fc;
+  font-size: $font-size-lg;
+}
+
+.repo-name {
+  color: #58a6ff;
+  font-weight: 600;
+  font-size: $font-size-sm;
+}
+
+.github-content {
+  flex: 1;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.repo-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.repo-stats {
+  display: flex;
+  gap: $spacing-md;
+  font-size: $font-size-xs;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: #8b949e;
+}
+
+.stat i {
+  font-size: 0.7rem;
+}
+
+.repo-description {
+  color: #f0f6fc;
+  font-size: $font-size-sm;
+  line-height: 1.4;
+}
+
+.repo-languages {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-xs;
+  color: #8b949e;
+}
+
+.language-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+@media (max-width: $breakpoint-md) {
+  .projects-container {
+    padding: $spacing-xl $spacing-lg;
+  }
+  
+  .section-title {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .carousel-container {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .project-info {
+    padding: $spacing-lg;
+  }
+  
+  .project-info h3 {
+    font-size: $font-size-xl;
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+}

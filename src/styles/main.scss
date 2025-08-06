@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import './_variables.scss';
+
+// Reset e base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: $gradient-primary;
+  color: $color-text;
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  font-weight: 400;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// Tipografia melhorada
+h1, h2, h3, h4, h5, h6 {
+  color: $color-green;
+  font-family: $font-primary;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: $font-size-3xl;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: $font-size-2xl;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: $font-size-xl;
+  font-weight: 500;
+}
+
+p {
+  color: $color-text;
+  font-size: $font-size-base;
+  line-height: 1.7;
+  margin-bottom: $spacing-sm;
+  opacity: 0.9;
+}
+
+a {
+  color: $color-green;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #8b5cf6;
+    text-shadow: $shadow-neon;
+  }
+}
+
+// Container principal
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+// Seções
+.section {
+  padding: $spacing-xxl 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: $font-size-4xl;
+  font-weight: 700;
+  margin-bottom: $spacing-xl;
+  background: $gradient-accent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: $gradient-secondary;
+    border-radius: $radius-sm;
+  }
+}
+
+// Cards e containers
+.card {
+  background: $gradient-card;
+  border: 1px solid rgba(247, 247, 247, 0.1);
+  border-radius: $radius-lg;
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-lg;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+}
+
+// Botões
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-lg;
+  background: $gradient-secondary;
+  color: $color-text;
+  border: none;
+  border-radius: $radius-md;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: $shadow-md;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Grid system
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+// Utilitários
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-xs { margin-bottom: $spacing-xs; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.mt-xs { margin-top: $spacing-xs; }
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+// Responsividade
+@media (max-width: $breakpoint-md) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 $spacing-sm;
+  }
+  
+  .section {
+    padding: $spacing-xl 0;
+  }
+  
+  .section-title {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .section-title {
+    font-size: $font-size-2xl;
+  }
+}
